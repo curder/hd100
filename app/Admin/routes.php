@@ -14,6 +14,7 @@ Route::group([
 
     $router->resources([
 
-        'links' => LinksController::class,
+        'links' => LinksController::class, // 文字链管理
+        'ads' => AdsController::class, // 广告管理
     ]);
 });
