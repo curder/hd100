@@ -129,7 +129,7 @@ return [
     /*
      * @see https://adminlte.io/docs/2.4/layout
      */
-    'skin' => 'skin-purple-light',
+    'skin' => 'skin-green-light',
 
     /*
     |---------------------------------------------------------|
@@ -151,6 +151,10 @@ return [
      * Settings for extensions.
      */
     'extensions' => [
+        'media-manager' => [
 
+            // Select a local disk that you configured in `config/filesystem.php`
+            'disk' => 'public'
+        ],
     ],
 ];
