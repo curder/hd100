@@ -8,13 +8,16 @@
         "php": ">=7.0.0",
         "encore/laravel-admin": "^1.5",
         "fideloper/proxy": "~3.3",
+        "jellybool/translug": "^2.0",
         "laravel-admin-ext/config": "^1.0",
         "laravel-admin-ext/helpers": "^1.0",
+        "laravel-admin-ext/log-viewer": "^1.0",
         "laravel-admin-ext/media-manager": "^1.0",
         "laravel-admin-ext/messages": "@dev",
         "laravel-admin-ext/scheduling": "^1.0",
         "laravel/framework": "5.5.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "maatwebsite/excel": "^2.1"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

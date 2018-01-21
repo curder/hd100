@@ -100,7 +100,7 @@ class AdsController extends Controller
             $form->text('url', '链接地址');
             $form->image('image', '上传图片')->help('请上传合适尺寸的图片');
             $form->textarea('description', '简要描述');
-            $form->text('order', '排序')->default(0)->help('排序值越小，数据越靠前');
+            $form->number('order', '排序')->default(0)->help(Lang::get('admin.order_string'));
 
             $form->display('created_at', Lang::get('admin.created_at'));
             $form->display('updated_at', Lang::get('admin.updated_at'));

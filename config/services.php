@@ -35,4 +35,9 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    // 有道翻译，解决文章的slug别名问题
+    'youdao' => [
+        'appKey' => env('YOUDAO_APP_KEY'),
+        'appSecret' => env('YOUDAO_APP_SECRET'),
+    ],
 ];
