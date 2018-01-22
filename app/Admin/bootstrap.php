@@ -18,4 +18,14 @@
  *
  */
 
+use App\Admin\Extensions\Forms\CKEditor;
+use App\Admin\Extensions\Forms\PHPEditor;
+use App\Admin\Extensions\Forms\WangEditor;
+use Encore\Admin\Form;
+
 Encore\Admin\Form::forget(['map', 'editor']);
+
+Form::extend('editor', WangEditor::class); // 编辑器
+//Form::extend('ckeditor', CKEditor::class);
+
+Form::extend('php', PHPEditor::class); // 代码编辑器
