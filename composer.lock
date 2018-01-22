@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef7c749619dcf91318f2bf42d1cc4771",
+    "content-hash": "4f6723c715abccc4a2818cae7667370b",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -219,16 +219,16 @@
         },
         {
             "name": "encore/laravel-admin",
-            "version": "v1.5.7",
+            "version": "v1.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "fe40c19b644ac069e6e611fe0f08cb4d80aa9e6a"
+                "reference": "c1b3895333c4b43b5ae60b4bc2088f4996f25d23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/z-song/laravel-admin/fe40c19b644ac069e6e611fe0f08cb4d80aa9e6a.zip",
-                "reference": "fe40c19b644ac069e6e611fe0f08cb4d80aa9e6a",
+                "url": "https://files.phpcomposer.com/files/z-song/laravel-admin/c1b3895333c4b43b5ae60b4bc2088f4996f25d23.zip",
+                "reference": "c1b3895333c4b43b5ae60b4bc2088f4996f25d23",
                 "shasum": ""
             },
             "require": {
@@ -285,7 +285,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2017-12-14T03:20:20+00:00"
+            "time": "2018-01-13T13:58:09+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -990,60 +990,6 @@
                 "media"
             ],
             "time": "2017-08-09T09:06:25+00:00"
-        },
-        {
-            "name": "laravel-admin-ext/messages",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel-admin-extensions/messages.git",
-                "reference": "a935775bedaedad20fb30dd1464e2fdf6a3e42f2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://files.phpcomposer.com/files/laravel-admin-extensions/messages/a935775bedaedad20fb30dd1464e2fdf6a3e42f2.zip",
-                "reference": "a935775bedaedad20fb30dd1464e2fdf6a3e42f2",
-                "shasum": ""
-            },
-            "require": {
-                "encore/laravel-admin": "1.5.*",
-                "laravel/framework": "5.5.*",
-                "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "laravel/laravel": "5.*",
-                "phpunit/phpunit": "~6.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Encore\\Admin\\Message\\MessageServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Encore\\Admin\\Message\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "z-song",
-                    "email": "zosong@126.com"
-                }
-            ],
-            "description": "Message extension for laravel-admin",
-            "homepage": "https://github.com/laravel-admin-extensions/messages",
-            "keywords": [
-                "laravel-admin",
-                "messages"
-            ],
-            "time": "2017-09-28T02:15:00+00:00"
         },
         {
             "name": "laravel-admin-ext/scheduling",
@@ -4994,9 +4940,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "laravel-admin-ext/messages": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
