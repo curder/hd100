@@ -26,7 +26,7 @@ class LinksController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('文字连接管理');
-            $content->description('管理网站的所有文字连接，比如，导航、友情链接或者底部链接');
+            $content->description('管理网站的所有文字连接，比如导航、友情链接或者底部链接');
 
             $content->body($this->tree());
         });

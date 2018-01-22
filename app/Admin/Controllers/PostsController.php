@@ -5,6 +5,7 @@ namespace App\Admin\Controllers;
 use App\Admin\Extensions\ExcelExporter;
 use App\Admin\Extensions\Tools\RestorePost;
 use App\Admin\Extensions\Tools\Trashed;
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use Encore\Admin\Form;
@@ -83,6 +84,7 @@ class PostsController extends Controller
 
             $grid->column('id', 'ID')->sortable();
             $grid->column('title', '文章标题')->editable();
+            $grid->column('category.title','所属分类')->label('primary');
 
             $states = [
                 'on' => ['text' => trans('admin.yes')],
@@ -113,6 +115,7 @@ class PostsController extends Controller
 
             // 右侧搜索
             $grid->filter(function (Grid\Filter $filter) {
+                $filter->equal('category_id', '所属分类')->select(Category::selectOptions());
                 $filter->like('title', '文章标题');
                 $filter->between('updated_at', Lang::get('admin.updated_at'))->datetime();
                 $filter->where(function ($query) {
@@ -122,6 +125,8 @@ class PostsController extends Controller
                     });
 
                 }, '包含标签', 'tag');
+
+
             });
 
             // 表格操作
@@ -136,7 +141,6 @@ class PostsController extends Controller
 
         });
 
-
     }
 
     /**
@@ -149,11 +153,12 @@ class PostsController extends Controller
         return Admin::form(Post::class, function (Form $form) {
             $form->tab('基础数据', function (Form $form) {
 //                $form->display('id', 'ID');
+                $form->select('category_id', '所属分类')->options(Category::all()->pluck('title', 'id'));
                 $form->text('title', '标题')
                     ->rules('required');
                 $form->text('slug')->help('请输入文章别名，将作为检索文章url的一部分');
                 $form->textarea('description', '描述');
-                $form->textarea('body', '内容');
+                $form->editor('body', '内容');
 
             })->tab('SEO设置', function (Form $form) {
                 $form->textarea('seo_title', 'SEO标题');
@@ -170,8 +175,8 @@ class PostsController extends Controller
                     ->default(0)->help(Lang::get('admin.order_string'));
 
                 $form->switch('index_recommend', Lang::get('admin.index_recommend'));
-                $form->textarea('css', 'CSS');
-                $form->textarea('js', 'JS');
+                $form->php('css', 'CSS');
+                $form->php('js', 'JS');
             });
 
             $form->display('created_at', Lang::get('admin.created_at'));

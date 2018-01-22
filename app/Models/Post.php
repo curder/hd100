@@ -21,4 +21,8 @@ class Post extends Model
             ->withTimestamps();
     }
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

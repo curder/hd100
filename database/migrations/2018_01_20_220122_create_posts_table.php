@@ -15,6 +15,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('category_id')->comment('所属分类')->default(0);
             $table->string('title')->comment('标题')->nullable();
             $table->string('slug')->comment('别名')->nullable();
             $table->string('url')->nullable()->comment('URL跳转');
