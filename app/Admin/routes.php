@@ -19,6 +19,7 @@ Route::group([
         'tags' => TagsController::class, // 标签管理
         'categories' => CategoriesController::class, // 分类管理
         'posts' => PostsController::class, // 文章管理
+        'pages' => PagesController::class, // 页面管理
     ]);
 
     $router->post('posts/restore', 'PostsController@restore'); // 恢复回收站中的文章
