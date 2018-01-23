@@ -15,4 +15,20 @@ class Ad extends Model
     protected $fillable = [
         'title', 'order', 'type', 'url', 'description', 'image'
     ];
+
+
+    public function scopeIndexBanner()
+    {
+        return $this->where('type', 0);
+    }
+
+    public function scopeCase()
+    {
+        return $this->where('type', 1);
+    }
+
+    public function scopeHonor()
+    {
+        return $this->where('type', 2);
+    }
 }
