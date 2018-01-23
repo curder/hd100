@@ -120,9 +120,7 @@ class CategoriesController extends Controller
                 $payload = "<strong>{$branch['title']}</strong>";
 
                 if (!isset($branch['children'])) {
-                    $uri = admin_base_path($branch['uri']);
-
-                    $payload .= "&nbsp;&nbsp;&nbsp;<a href=\"$uri\" class=\"dd-nodrag\">$uri</a>";
+                    $payload .= "&nbsp;&nbsp;&nbsp;";
                 }
 
                 return $payload;
