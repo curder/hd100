@@ -22,7 +22,7 @@ class HomeController extends Controller
 
             $content->row(function (Row $row) {
 
-                $row->column(4, function (Column $column) {
+                $row->column(8, function (Column $column) {
                     $column->append(Dashboard::environment());
                 });
 
@@ -31,9 +31,9 @@ class HomeController extends Controller
                     $column->append(Dashboard::dependencies());
                 });
 
-                $row->column(4, function (Column $column) {
-                    $column->append(Dashboard::extensions());
-                });
+//                $row->column(4, function (Column $column) {
+//                    $column->append(Dashboard::extensions());
+//                });
             });
         });
     }
