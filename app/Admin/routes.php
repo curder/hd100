@@ -20,9 +20,11 @@ Route::group([
         'categories' => CategoriesController::class, // 分类管理
         'posts' => PostsController::class, // 文章管理
         'pages' => PagesController::class, // 页面管理
+        'experts' => ExpertsController::class, // 专家团队
     ]);
 
     $router->post('posts/restore', 'PostsController@restore'); // 恢复回收站中的文章
     $router->post('ads/restore', 'AdsController@restore'); // 恢复回收站中的文章
+    $router->post('experts/restore', 'ExpertsController@restore'); // 恢复回收站中的专家
 });
 

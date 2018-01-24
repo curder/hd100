@@ -125,8 +125,6 @@ class PostsController extends Controller
                     });
 
                 }, '包含标签', 'tag');
-
-
             });
 
             // 表格操作
