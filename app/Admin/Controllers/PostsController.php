@@ -133,7 +133,7 @@ class PostsController extends Controller
                     $actions->disableDelete();
                 } else {
                     // 添加一个查看按钮
-                    $actions->prepend(sprintf('<a href="%s" target="_blank" title="%s"><i class="fa fa-eye"></i></a>', '#', trans('admin.show')));
+                    $actions->prepend(sprintf('<a href="%s" target="_blank" title="%s"><i class="fa fa-eye"></i></a>', $this->row->post_url, trans('admin.show')));
                 }
             });
 
