@@ -4,7 +4,7 @@
     <div id="banner">
         @foreach($index_banners as $banner)
             <a href="{{ $banner['url'] }}">
-                <div class="item" style="background-image: url({{$banner['image']}});">
+                <div class="item" style="background-image: url({{$banner['image_url']}});">
                 {{--<div class="txt">--}}
                 <!--<p class="p1">打造中国一流的工程代建综合服务商 </p>-->
                     <!--<p class="p2">To build China's first-class agent management services integrated service providers </p>-->
@@ -43,7 +43,7 @@
             <ul class="ofh w100">
                 @foreach($case_banners as $case)
                     <li style="display: none;">
-                        <img class="show" src="{{ $case['image'] }}" alt="{{ $banner['title'] }}">
+                        <img class="show" src="{{ $case['image_url'] }}" alt="{{ $banner['title'] }}">
                         <div class="txtBox">
                             <div class="content">
                                 <h3></h3>
@@ -81,7 +81,7 @@
                 <ul class="picList">
                     @foreach($honor_banners as $honor)
                         <li>
-                            <div class="pic"><img src="{{$honor->image}}"></div>
+                            <div class="pic"><img src="{{$honor->image_url}}"></div>
                         </li>
                     @endforeach
                 </ul>
