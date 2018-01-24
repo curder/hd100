@@ -94,8 +94,8 @@
     .box-about .txt p {padding-bottom: 10px;}
     .box-about .list .tit {margin-top: 10px;}
 
-    .box-contact #allmap {margin: 0;float: none;width: 100%;}
-    .box-contact .txt {margin-top: 20px;float: none;width: 100%;}
+    .box-contact #allmap {margin: 0 !important;float: none !important;width: 100% !important;}
+    .box-contact .txt {margin-top: 20px !important;float: none !important;width: 100% !important;}
     .box-contact .txt .tit {font-size: 18px;}
     .box-contact .txt .info {padding-top: 0;font-size: 14px;}
     .box-contact {padding: 20px 0;}
