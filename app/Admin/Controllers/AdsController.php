@@ -3,14 +3,16 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Ad;
-
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
+use Illuminate\Http\Request;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
-use Encore\Admin\Controllers\ModelForm;
 use Illuminate\Support\Facades\Lang;
+use Encore\Admin\Controllers\ModelForm;
+use App\Admin\Extensions\Tools\Trashed;
+use App\Admin\Extensions\Tools\RestoreAd;
 
 class AdsController extends Controller
 {
@@ -69,6 +71,9 @@ class AdsController extends Controller
     protected function grid()
     {
         return Admin::grid(Ad::class, function (Grid $grid) {
+            if (request('trashed') == 1) {
+                $grid->model()->onlyTrashed();
+            }
 
             $grid->id('ID')->sortable();
             $grid->column('title', '名称')->editable();
@@ -78,8 +83,26 @@ class AdsController extends Controller
             $grid->column('image', '预览图片')->image();
             $grid->column('created_at', Lang::get('admin.updated_at'));
 
+
+            // 左侧工具
+            $grid->tools(function ($tools) {
+                $tools->append(new Trashed());
+
+                $tools->batch(function (Grid\Tools\BatchActions $batch) {
+                    $batch->add('恢复', new RestoreAd());
+                });
+            });
+
+
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('type')->select(static::getTypes());
+            });
+
+            // 表格操作
+            $grid->actions(function ($actions) {
+                if ($this->row->trashed()) {
+                    $actions->disableDelete();
+                }
             });
         });
     }
@@ -105,6 +128,18 @@ class AdsController extends Controller
             $form->display('created_at', Lang::get('admin.created_at'));
             $form->display('updated_at', Lang::get('admin.updated_at'));
         });
+    }
+
+    /**
+     * 恢复回收站中的广告
+     * @param Request $request
+     * @return mixed
+     */
+    public function restore(Request $request)
+    {
+        if (is_null($request->get('ids'))) return;
+
+        return Ad::onlyTrashed()->find($request->get('ids'))->each->restore();
     }
 
     /**
