@@ -8,20 +8,7 @@
             <p class="p1">{{ config('hotline') }}</p>
             <p class="p2">24小时热线：{{ config('phone') }}</p>
         </div>
-        <ul id="nav">
-            @foreach($top_navigations as $navigation)
-            <li>
-                <a href="{{ $navigation['url'] }}" class="@if($navigation['children']) child @else par @endif">{{ $navigation['title'] }}</a>
-                @if($navigation['children'])
-                    <div class="sub">
-                        @foreach ($navigation['children'] as $sub)
-                            <a href="{{ $sub['url'] }}">{{ $sub['title'] }}</a>
-                        @endforeach
-                    </div>
-                @endif
-            </li>
-            @endforeach
-        </ul>
+        @include('home.widgets.navigation')
     </div>
     <span class="menuBtn">
         <em></em>

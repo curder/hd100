@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Observers\AdObserver;
 use Encore\Admin\Traits\AdminBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -16,19 +17,16 @@ class Ad extends Model
         'title', 'order', 'type', 'url', 'description', 'image'
     ];
 
-
-    public function scopeIndexBanner()
+    public static function boot()
     {
-        return $this->where('type', 0);
+        parent::boot();
+        static::observe(AdObserver::class);
     }
 
-    public function scopeCase()
+    public static function getAllAds()
     {
-        return $this->where('type', 1);
-    }
-
-    public function scopeHonor()
-    {
-        return $this->where('type', 2);
+        return \Cache::remember('ads:list', 24 * 60, function () {
+            return self::orderBy('order')->get();
+        });
     }
 }

@@ -142,17 +142,5 @@
             </div>
         </div>
     </div>
-    <div class="links">
-        <div class="link">
-            <div class="title"><strong class="zh_cn">友情链接</strong>&nbsp;<span class="en">Links</span></div>
-            <ul>
-                @foreach($friend_links as $link)
-                    <li>
-                        <a href="{{ $link['url'] }}" target="_blank">{{ $link['title'] }}</a>
-                        @if($link['id'] !== collect($friend_links)->last()['id'])|@endif
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    </div>
+    @include('home.widgets.links')
 @endsection

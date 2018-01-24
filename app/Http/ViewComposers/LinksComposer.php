@@ -28,7 +28,9 @@ class LinksComposer
 
     public function getNavigations()
     {
-        $links = Link::get()->toArray();
+//        $links = Link::get()->toArray();
+        $links = (new Link())->getAllLinks();
+
 
         $this->top_navigations = getTree($links, 1);
         $this->footer_navigations = getTree($links, 34);
