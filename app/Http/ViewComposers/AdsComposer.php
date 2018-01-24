@@ -24,7 +24,6 @@ class AdsComposer
         $view->with('index_banners', $this->index_banners); // 顶部大banner
         $view->with('case_banners', $this->case_banners); // 成功案例
         $view->with('honor_banners', $this->honor_banners); // 资质荣誉
-
     }
 
     protected function getAds($type)

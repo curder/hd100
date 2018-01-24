@@ -20,7 +20,7 @@ class Link extends Model
         static::observe(new LinkObserver);
     }
 
-    public function getAllLinks()
+    public static function getAllLinks()
     {
         return Cache::remember('links:list', 24 * 60, function () {
             return Link::all()->toArray();

@@ -24,63 +24,9 @@
             </h2>
             <div class="wp">
                 <div class="list">
-                    <div class="news-list">
-                        <h3><span><a href="../../xwdt/hydt/">更多&gt;&gt;</a></span>行业新闻</h3>
-                        <ul>
-                            <li><a href="/html/17094329.html" target="_blank" title="从2016年建筑业改革看2017年行业发展形势">从2016年建筑业改革看2017年行业发展形势</a>
-                            </li>
-                            <li><a href="/html/051948137.html" target="_blank"
-                                   title="2017年，中国建筑业的十大猜想">2017年，中国建筑业的十大猜想</a>
-                            </li>
-                            <li><a href="/html/59748311.html" target="_blank" title="营改增后施工企业税负升高，可能是因为这些问题没搞懂！">营改增后施工企业税负升高，可能是因为这些问题没搞懂！</a>
-                            </li>
-                            <li><a href="/html/402695850.html" target="_blank" title="住房和城乡建设部：北京市建筑业企业资质问答汇总">住房和城乡建设部：北京市建筑业企业资质问答汇总</a>
-                            </li>
-                            <li><a href="/html/58206380.html" target="_blank"
-                                   title="北京市人民政府办公厅关于印发市发展改革委等部门制定的《北京市新增产业的禁止和限制目录(2015年版)》的通知">北京市人民政府办公厅关于印发市发展改革委等部门制定的《北京市新增产业的禁止和限制目录(2015年版)》的通知</a>
-                            </li>
-                            <li><a href="/html/2871361856.html" target="_blank" title="关于尽快换发建筑业企业新版资质证书的通知">关于尽快换发建筑业企业新版资质证书的通知</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="news-list">
-                        <h3><span><a href="../../xwdt/hydt/">更多&gt;&gt;</a></span>行业新闻</h3>
-                        <ul>
-                            <li><a href="/html/17094329.html" target="_blank" title="从2016年建筑业改革看2017年行业发展形势">从2016年建筑业改革看2017年行业发展形势</a>
-                            </li>
-                            <li><a href="/html/051948137.html" target="_blank"
-                                   title="2017年，中国建筑业的十大猜想">2017年，中国建筑业的十大猜想</a>
-                            </li>
-                            <li><a href="/html/59748311.html" target="_blank" title="营改增后施工企业税负升高，可能是因为这些问题没搞懂！">营改增后施工企业税负升高，可能是因为这些问题没搞懂！</a>
-                            </li>
-                            <li><a href="/html/402695850.html" target="_blank" title="住房和城乡建设部：北京市建筑业企业资质问答汇总">住房和城乡建设部：北京市建筑业企业资质问答汇总</a>
-                            </li>
-                            <li><a href="/html/58206380.html" target="_blank"
-                                   title="北京市人民政府办公厅关于印发市发展改革委等部门制定的《北京市新增产业的禁止和限制目录(2015年版)》的通知">北京市人民政府办公厅关于印发市发展改革委等部门制定的《北京市新增产业的禁止和限制目录(2015年版)》的通知</a>
-                            </li>
-                            <li><a href="/html/2871361856.html" target="_blank" title="关于尽快换发建筑业企业新版资质证书的通知">关于尽快换发建筑业企业新版资质证书的通知</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="news-list">
-                        <h3><span><a href="../../xwdt/hydt/">更多&gt;&gt;</a></span>行业新闻</h3>
-                        <ul>
-                            <li><a href="/html/17094329.html" target="_blank" title="从2016年建筑业改革看2017年行业发展形势">从2016年建筑业改革看2017年行业发展形势</a>
-                            </li>
-                            <li><a href="/html/051948137.html" target="_blank"
-                                   title="2017年，中国建筑业的十大猜想">2017年，中国建筑业的十大猜想</a>
-                            </li>
-                            <li><a href="/html/59748311.html" target="_blank" title="营改增后施工企业税负升高，可能是因为这些问题没搞懂！">营改增后施工企业税负升高，可能是因为这些问题没搞懂！</a>
-                            </li>
-                            <li><a href="/html/402695850.html" target="_blank" title="住房和城乡建设部：北京市建筑业企业资质问答汇总">住房和城乡建设部：北京市建筑业企业资质问答汇总</a>
-                            </li>
-                            <li><a href="/html/58206380.html" target="_blank"
-                                   title="北京市人民政府办公厅关于印发市发展改革委等部门制定的《北京市新增产业的禁止和限制目录(2015年版)》的通知">北京市人民政府办公厅关于印发市发展改革委等部门制定的《北京市新增产业的禁止和限制目录(2015年版)》的通知</a>
-                            </li>
-                            <li><a href="/html/2871361856.html" target="_blank" title="关于尽快换发建筑业企业新版资质证书的通知">关于尽快换发建筑业企业新版资质证书的通知</a>
-                            </li>
-                        </ul>
-                    </div>
+                    @include('home.widgets.posts', ['category' => $first_post_list])
+                    @include('home.widgets.posts', ['category' => $second_post_list])
+                    @include('home.widgets.posts', ['category' => $third_post_list])
                 </div>
             </div>
         </div>

@@ -11,6 +11,11 @@ class Category extends Model
 {
     use SoftDeletes, ModelTree, AdminBuilder;
 
+    public function getCategoryUrlAttribute()
+    {
+        return route('home.posts.index', $this);
+    }
+
     public function posts()
     {
         return $this->hasMany(Post::class);
