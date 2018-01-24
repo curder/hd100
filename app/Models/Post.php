@@ -25,4 +25,11 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+
+    public function getPostUrlAttribute()
+    {
+        $year = $this->created_at->year;
+        return route('home.posts.show', [$year, $this]);
+    }
 }

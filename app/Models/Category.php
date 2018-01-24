@@ -10,4 +10,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Category extends Model
 {
     use SoftDeletes, ModelTree, AdminBuilder;
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
