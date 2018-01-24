@@ -25,20 +25,7 @@
                     @endforeach
                 </ul>
 
-                @if($posts->count())
-                    <div class="pages">
-                        <a class="a1" href="javascript:;">{{ $posts->total() }}条</a>
-                        <a href="{{ $posts->perPage() }}" class="a1">上一页</a>
-                        @for ($i = 1, $length = min(10, $posts->lastPage()); $i <= $length; $i++)
-                            @if($posts->currentPage() === $i)
-                                <span>{{ $i }}</span>
-                            @else
-                                <a href="{{ $posts->url($i) }}">{{ $i }}</a>
-                            @endif
-                        @endfor
-                        <a href="{{ $posts->nextPageUrl() }}" class="a1">下一页</a>
-                    </div>
-                @endif
+                @include('home.widgets.page',['model' => $posts])
             </div>
         </div>
     </div>

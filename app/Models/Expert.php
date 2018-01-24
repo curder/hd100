@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Expert extends Model
 {
     use SoftDeletes;
+
+
+    public function getExpertUrlAttribute()
+    {
+        return route('home.experts.show', [$this]);
+    }
 }
