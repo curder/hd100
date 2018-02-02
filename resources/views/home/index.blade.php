@@ -21,7 +21,7 @@
     <div class="bd">
         <div class="section-index-2 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
             <h2 class="g-tit-1">
-                <p class="p1">资讯中心</p>
+                <p class="p1">行业资讯</p>
                 <p class="p2">news</p>
             </h2>
             <div class="wp">
