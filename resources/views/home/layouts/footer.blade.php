@@ -15,11 +15,23 @@
         </div>
     </div>
     <div class="footerMenu">
-        <div class="box">
+        <div class="box wp">
             <ul class="ofh">
-                <li style="float:right;color: #636363;">
-                    <a href="#" target="_blank" style="color: #636363;">琼ICP备11000029号</a>
-                </li>
+                @foreach($legal_notices as $notice)
+                    <li>
+                        @if($notice['url'])
+                            <a href="{{ $notice['url'] }}">
+                                @if($notice['logo'])
+                                    <img src="{{ $notice['logo'] }}" alt="{{ $notice['title'] }}">
+                                @else
+                                    {{ $notice['title'] }}
+                                @endif
+                            </a>
+                        @else
+                            {{ $notice['title'] }}
+                        @endif
+                    </li>
+                @endforeach
             </ul>
         </div>
     </div>
