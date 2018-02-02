@@ -1,5 +1,5 @@
 @extends('home.layouts.master')
-
+@section('page_title', '专家团队')
 @section('content')
     <div class="banner-inner" style="background-image: url(images/services.png);">
         {{--<div class="txt">--}}

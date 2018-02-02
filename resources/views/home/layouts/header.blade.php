@@ -2,7 +2,7 @@
 <div id="hd">
     <div class="wp">
         <a href="" class="logo">
-            <img src="{{ config('logo') }}" alt="北京海汇盛景工程管理有限公司">
+            <img src="{{ config('logo') }}" alt="{{ config('domain_title') }}">
         </a>
         <div class="tel">
             <p class="p1">{{ config('top_hotline') }}</p>

@@ -1,6 +1,5 @@
 window._ = require('lodash');
 
-
 try {
     window.$ = window.jQuery = require('jquery');
     // require('bootstrap-sass');
@@ -12,8 +11,6 @@ require('./libs/lib');
 require('./libs/slick.min');
 require('./libs/headroom.min');
 require('./libs/jQuery.headroom');
-// require('wowjs');
-// window.WOW = require('wowjs').WOW;
 import {WOW} from 'wowjs'
 
 window.WOW = WOW

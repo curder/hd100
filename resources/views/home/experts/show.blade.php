@@ -1,4 +1,5 @@
 @extends('home.layouts.master')
+@section('page_title', $expert->name)
 @section('banner')
     <div class="banner-inner" style="background-image: url(images/services.png);">
         {{--<div class="txt">--}}

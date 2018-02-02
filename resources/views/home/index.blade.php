@@ -1,5 +1,7 @@
 @extends('home.layouts.master')
-
+@section('page_title', '首页')
+@section('page_keywords', '关键字')
+@section('page_description', '描述')
 @section('banner')
     <div id="banner">
         @foreach($index_banners as $banner)

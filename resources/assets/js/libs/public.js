@@ -1,4 +1,27 @@
 $(function () {
+    $("#toptop").hover(function () {
+        $("#hd").removeClass("slideUp").addClass('slideDown')
+    })
+    // 头部
+    $('#hd').headroom({
+        offset: 205,
+        tolerance: 5,
+        classes: {
+            initial: 'ani',
+            pinned: 'slideDown',
+            unpinned: 'slideUp'
+        }
+    });
+    // banner
+    $('#banner').slick({
+        dots: true,
+        autoplay: true,
+        customPaging: function () {
+            return '';
+        },
+        prevArrow: '<a href="javascript:;" class="btn btn-prev"></a>',
+        nextArrow: '<a href="javascript:;" class="btn btn-next"></a>'
+    });
     // 资质荣誉
     jQuery(".picMarquee-left").slide({
         mainCell: ".bd ul",

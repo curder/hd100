@@ -1,5 +1,5 @@
 @extends('home.layouts.master')
-
+@section('page_title',$category->title)
 @section('banner')
     <div class="banner-inner" style="background-image: url({{ $category->cover }});"></div>
 @stop
