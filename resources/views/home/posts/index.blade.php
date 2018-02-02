@@ -15,7 +15,7 @@
                     @foreach ($posts as $post)
                         <li class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
                             <a href="{{ $post->post_url }}" target="_blank" title="{{ $post->title }}">
-                                <img src="{{ $post->cover }}" alt="{{ $post->title }}">
+                                <img src="{{ $post->cover ?? config('post_default_cover') }}" alt="{{ $post->title }}">
                                 <p class="tit">{{ $post->title }}</p>
                                 <div class="info">
                                     {{ $post->description }}
