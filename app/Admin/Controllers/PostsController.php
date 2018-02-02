@@ -155,9 +155,12 @@ class PostsController extends Controller {
 			$form->tab( '基础数据', function ( Form $form ) {
 //                $form->display('id', 'ID');
 				$form->select( 'category_id', '所属分类' )->options( Category::all()->pluck( 'title', 'id' ) );
+				$form->text( 'author', '作者' )
+				     ->rules( 'sometimes' )
+				     ->default( '' )
+				     ->help( '不填写默认展示' . config( 'default_news_author' ) );
 				$form->text( 'title', '标题' )
 				     ->rules( 'required' );
-				$form->text( 'slug' )->help( '请输入文章别名，将作为检索文章url的一部分' );
 				$form->textarea( 'description', '描述' );
 				$form->editor( 'body', '内容' );
 
@@ -166,6 +169,7 @@ class PostsController extends Controller {
 				$form->textarea( 'seo_keywords', 'SEO关键字' );
 				$form->textarea( 'seo_description', 'SEO描述' );
 			} )->tab( '其他设置', function ( Form $form ) {
+				$form->text( 'slug' )->help( '请输入文章别名，将作为检索文章url的一部分' );
 				$form->multipleSelect( 'tags', '文章标签' )
 				     ->help( '标签请在标签管理中新增，然后在这里进行选择' )
 				     ->placeholder( '请选择标签' )

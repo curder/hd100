@@ -8,7 +8,7 @@
         <div class="wp">
             <div class="box-news-info cont-inner">
                 <h1 class="tit">{{ $post->title }}</h1>
-                <p class="date-1">{{ $post->created_at->format('Y-m-d') }}</p>
+                <p class="date-1">{{ $post->author ?? config('default_news_author') }}</p>
                 <div class="info">
                     {!! $post->body !!}
                 </div>
