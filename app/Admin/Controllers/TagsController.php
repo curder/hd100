@@ -102,8 +102,8 @@ class TagsController extends Controller
                 });
             $form->text('slug', '标签别名')->help('请输入英文作为标签别名，如果不能自动生成请手动输入这个别名');
 
-            $form->display('created_at', trans('created_at'));
-            $form->display('updated_at', trans('updated_at'));
+            $form->display('created_at', trans('admin.created_at'));
+            $form->display('updated_at', trans('admin.updated_at'));
         });
     }
 }

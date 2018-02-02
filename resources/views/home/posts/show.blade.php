@@ -1,7 +1,7 @@
 @extends('home.layouts.master')
 @section('page_title',$post->title)
 @section('banner')
-    <div class="banner-inner" style="background-image: url({{ $post->category->cover }});"></div>
+    <div class="banner-inner" style="background-image: url({{ $post->category->cover ?? 'images/services.png' }});"></div>
 @stop
 @section('content')
     <div id="bd">

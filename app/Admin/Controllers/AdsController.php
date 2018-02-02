@@ -118,7 +118,10 @@ class AdsController extends Controller {
 			     ->options( static::getTypes() )->rules( 'required' );
 			$form->text( 'title', '名称' );
 			$form->text( 'url', '链接地址' );
-			$form->image( 'image', '上传图片' )->help( '请上传合适尺寸的图片,首页Banner图1920x487、成功案例图片1200x750、资质荣誉440x320等' );
+			$form->image( 'image', '上传图片' )
+			     ->move( 'images/index/' . date('Y-m-d') )
+			     ->uniqueName()
+			     ->help( '请上传合适尺寸的图片,首页Banner图1920x487、成功案例图片1200x750、资质荣誉440x320等' );
 			$form->textarea( 'description', '简要描述' );
 			$form->number( 'order', '排序' )->default( 0 )->help( Lang::get( 'admin.order_string' ) );
 
