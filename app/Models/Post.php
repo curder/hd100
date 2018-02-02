@@ -15,6 +15,10 @@ class Post extends Model {
 		'cover_url'
 	];
 
+	public function getRouteKeyName() {
+		return 'slug';
+	}
+
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
 	 */
@@ -49,8 +53,7 @@ class Post extends Model {
 	 * @return string
 	 */
 	public function getPostUrlAttribute() {
-		$year = $this->created_at->year;
 
-		return route( 'home.posts.show', [ $year, $this ] );
+		return route( 'home.posts.show', $this );
 	}
 }

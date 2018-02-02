@@ -7,8 +7,20 @@ use Encore\Admin\Traits\ModelTree;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * Class Category
+ *
+ * @package App\Models
+ */
 class Category extends Model {
 	use SoftDeletes, ModelTree, AdminBuilder;
+
+	/**
+	 * @return string
+	 */
+	public function getRouteKeyName() {
+		return 'uri';
+	}
 
 	public function getCategoryUrlAttribute() {
 		return route( 'home.posts.index', $this );
