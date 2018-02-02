@@ -9,10 +9,10 @@ use App\Http\Controllers\Controller;
 
 class PostsController extends Controller
 {
-    public function index($category)
+    public function index($category_id)
     {
-        $category = Category::find($category);
-        $posts = $category->posts()->paginate(6);;
+        $category = Category::find($category_id);
+        $posts = $category->posts()->orderBy('order')->paginate(6);;
 
         return view('home.posts.index', compact('category', 'posts'));
     }
