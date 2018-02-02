@@ -24,6 +24,9 @@ class Link extends Model {
 
 	public function getLogoUrlAttribute() {
 		$path = $this->logo;
+		if ( ! $path ) {
+			return false;
+		}
 		if ( url()->isValidUrl( $path ) ) {
 			$src = $path;
 		} else {
