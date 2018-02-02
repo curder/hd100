@@ -10,7 +10,6 @@
  * @return array
  */
 function getTree( $data = [], $parent_id = 0, $level = 0 ) {
-
 	$tree = [];
 	if ( $data && is_array( $data ) ) {
 		foreach ( $data as $v ) {
@@ -22,7 +21,8 @@ function getTree( $data = [], $parent_id = 0, $level = 0 ) {
 					'url'       => $v['url'],
 					'order'     => $v['order'],
 					'parent_id' => $v['parent_id'],
-					'logo'      => $v['logo'],
+					'cover'      => $v['logo_url'] ?? '',
+
 					'children'  => getTree( $data, $v['id'], $level + 1 ),
 				];
 			}

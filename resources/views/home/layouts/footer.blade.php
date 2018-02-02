@@ -21,8 +21,8 @@
                     <li>
                         @if($notice['url'])
                             <a href="{{ $notice['url'] }}">
-                                @if($notice['logo'])
-                                    <img src="{{ $notice['logo'] }}" alt="{{ $notice['title'] }}">
+                                @if($notice['cover'])
+                                    <img src="{{ $notice['cover'] }}" alt="{{ $notice['title'] }}">
                                 @else
                                     {{ $notice['title'] }}
                                 @endif
