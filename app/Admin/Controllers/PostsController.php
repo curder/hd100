@@ -73,6 +73,12 @@ class PostsController extends Controller {
 	 */
 	protected function grid() {
 		return Admin::grid( Post::class, function ( Grid $grid ) {
+			if ( ! request( 'order' ) ) {
+				$grid->model()->orderBy( 'order', 'ASC' );
+			}
+			if ( ! request( 'created_at' ) ) {
+				$grid->model()->orderBy( 'created_at', 'DESC' );
+			}
 
 			if ( request( 'trashed' ) == 1 ) {
 				$grid->model()->onlyTrashed();
