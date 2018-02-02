@@ -8,7 +8,7 @@
                 <div class="box">
                     <div class="clearfix ofh">
                         咨询热线：<br>
-                        <span>{{ config('hotline') }}</span>
+                        <span>{{ config('footer_hotline') }}</span>
                     </div>
                 </div>
             </div>

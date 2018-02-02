@@ -5,7 +5,7 @@
             <img src="{{ config('logo') }}" alt="北京海汇盛景工程管理有限公司">
         </a>
         <div class="tel">
-            <p class="p1">{{ config('hotline') }}</p>
+            <p class="p1">{{ config('top_hotline') }}</p>
             <p class="p2">24小时热线：{{ config('phone') }}</p>
         </div>
         @include('home.widgets.navigation')
