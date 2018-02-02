@@ -22,7 +22,7 @@ class CreatePostsTable extends Migration
             $table->string('description')->comment('描述')->nullable();
             $table->integer('order')->default(0)->comment('排序，数值越小数据越靠前');
             $table->string('cover')->nullable()->comment('文章封面');
-            $table->text('body')->nullable()->comment('文章内容');
+            $table->longText('body')->nullable()->comment('文章内容');
             $table->tinyInteger('index_recommend')->default(0)->comment('是否首页推荐');
             $table->string('seo_title', 80)->nullable()->comment('SEO标题');
             $table->string('seo_keywords', 120)->nullable()->comment('SEO关键字');
