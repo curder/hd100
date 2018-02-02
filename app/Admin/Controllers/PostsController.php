@@ -16,6 +16,8 @@ use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\Response;
 
 class PostsController extends Controller {
 	use ModelForm;
@@ -199,5 +201,37 @@ class PostsController extends Controller {
 		}
 
 		return Post::onlyTrashed()->find( $request->get( 'ids' ) )->each->restore();
+	}
+
+	/**
+	 * 文件上传
+	 *
+	 * @param \Illuminate\Http\Request $request
+	 *
+	 * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+	 */
+	public function upload( Request $request ) {
+		$this->validate( $request, [
+			'editor_image' => 'required|image',
+		] );
+		$file = $request->file( 'editor_image' );
+		if ( $file->isValid() ) {
+			// 获取文件相关信息
+			$ext      = $file->getClientOriginalExtension();     // 扩展名
+			$realPath = $file->getRealPath();   //临时文件的绝对路径
+//			$originalName = $file->getClientOriginalName(); // 文件原名
+//			$type         = $file->getClientMimeType();     // image/jpeg
+
+			$filename = 'images/posts/' . date( 'Y-m-d' ) . '/' . md5( uniqid() ) . '.' . $ext;
+			// 使用本地存储空间（目录）
+			if ( Storage::disk( 'public' )->put( $filename, file_get_contents( $realPath ) ) ) {
+				return response( [
+					'errno' => 0,
+					'data'  => [
+						config( 'filesystems.disks.public.url' ) . '/' . $filename
+					]
+				], Response::HTTP_OK );
+			}
+		}
 	}
 }

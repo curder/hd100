@@ -24,7 +24,8 @@ Route::group([
     ]);
 
     $router->post('posts/restore', 'PostsController@restore'); // 恢复回收站中的文章
-    $router->post('ads/restore', 'AdsController@restore'); // 恢复回收站中的文章
+	$router->post('posts/upload', 'PostsController@upload'); // 上传编辑器图片
+    $router->post('ads/restore', 'AdsController@restore'); // 恢复回收站中的广告图
     $router->post('experts/restore', 'ExpertsController@restore'); // 恢复回收站中的专家
 });
 
