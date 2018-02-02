@@ -14,8 +14,8 @@ class CreatePostsTable extends Migration {
 		Schema::create( 'posts', function ( Blueprint $table ) {
 			$table->increments( 'id' );
 			$table->unsignedInteger( 'category_id' )->comment( '所属分类' )->default( 0 );
-			$table->string( 'author' )->nullable()->default( '' )->comment( '文章作者' );
 			$table->string( 'title' )->comment( '标题' )->nullable();
+			$table->string( 'author' )->nullable()->default( '' )->comment( '文章作者' );
 			$table->string( 'slug' )->comment( '别名' )->nullable();
 			$table->string( 'url' )->nullable()->comment( 'URL跳转' );
 			$table->string( 'description' )->comment( '描述' )->nullable();
@@ -23,6 +23,8 @@ class CreatePostsTable extends Migration {
 			$table->string( 'cover' )->nullable()->comment( '文章封面' );
 			$table->text( 'body' )->nullable()->comment( '文章内容' );
 			$table->tinyInteger( 'index_recommend' )->default( 0 )->comment( '是否首页推荐' );
+			$table->string( 'source', 100 )->nullable()->comment( '文章来源' );
+			$table->unsignedInteger( 'views' )->default( 1 )->comment( '文章浏览数' );
 			$table->string( 'seo_title', 80 )->nullable()->comment( 'SEO标题' );
 			$table->string( 'seo_keywords', 120 )->nullable()->comment( 'SEO关键字' );
 			$table->string( 'seo_description', 200 )->nullable()->comment( 'SEO描述' );

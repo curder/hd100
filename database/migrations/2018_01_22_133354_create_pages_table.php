@@ -23,6 +23,8 @@ class CreatePagesTable extends Migration {
 			$table->string( 'seo_title' )->comment( 'SEO标题' )->nullable();
 			$table->string( 'seo_keywords' )->comment( 'SEO关键字' )->nullable();
 			$table->string( 'seo_description' )->comment( 'SEO描述' )->nullable();
+			$table->string( 'source', 100 )->nullable()->comment( '页面来源' );
+			$table->unsignedInteger( 'views' )->default( 1 )->comment( '页面浏览数' );
 			$table->text( 'css' )->comment( '页面CSS' )->nullable();
 			$table->text( 'js' )->comment( '页面JS' )->nullable();
 			$table->unsignedInteger( 'order' )->comment( '排序' )->default( 0 );
