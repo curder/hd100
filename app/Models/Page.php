@@ -25,6 +25,23 @@ class Page extends Model {
 		return 'slug';
 	}
 
+	/**
+	 * @return mixed|string
+	 */
+	public function getCoverUrlAttribute() {
+		$path = $this->cover;
+
+		if ( ! $path ) {
+			return config( 'app.url' ) . config( 'page_default_cover' );
+		}
+		if ( url()->isValidUrl( $path ) ) {
+			$src = $path;
+		} else {
+			$src = \Storage::disk( config( 'admin.upload.disk' ) )->url( $path );
+		}
+
+		return $src;
+	}
 
 	protected static function boot() {
 //        parent::boot();

@@ -5,7 +5,7 @@
 
 @section('banner')
     <div class="banner-inner"
-         style="background-image: url({{ $page->category->cover_url ??  config( 'app.url' ) . '/images/services.png' }});"></div>
+         style="background-image: url({{ $page->cover_url ??  config( 'app.url' ) . '/images/services.png' }});"></div>
 @stop
 @section('content')
     <div id="bd">
