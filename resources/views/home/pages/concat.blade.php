@@ -1,8 +1,9 @@
 @extends('home.layouts.master')
 @section('page_title', $city['title'])
 @section('content')
-    <div class="banner-inner" style="background-image: url(images/services.png);">
-        {{--<div class="txt">--}}
+    <div class="banner-inner"
+        style="background-image: url({{ $page->cover_url ??  config( 'app.url' ) . '/images/services.png' }});"></div>
+    {{--<div class="txt">--}}
             {{--<p class="p1">联系我们</p>--}}
             {{--<p class="p2">Contact Us</p>--}}
         {{--</div>--}}
