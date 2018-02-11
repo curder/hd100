@@ -20,7 +20,7 @@
                 @foreach($legal_notices as $notice)
                     <li>
                         @if($notice['url'])
-                            <a href="{{ $notice['url'] }}">
+                            <a href="{{ $notice['url'] }}" target="_blank">
                                 @if($notice['cover'])
                                     <img src="{{ $notice['cover'] }}" alt="{{ $notice['title'] }}">
                                 @else
