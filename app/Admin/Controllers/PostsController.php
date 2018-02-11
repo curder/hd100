@@ -94,9 +94,9 @@ class PostsController extends Controller {
 				'on'  => [ 'text' => trans( 'admin.yes' ) ],
 				'off' => [ 'text' => trans( 'admin.no' ) ],
 			];
-			$grid->column( 'index_recommend', '文章属性' )->switchGroup( [
-				'index_recommend' => Lang::get( 'admin.index_recommend' )
-			], $states );
+//			$grid->column( 'index_recommend', '文章属性' )->switchGroup( [
+//				'index_recommend' => Lang::get( 'admin.index_recommend' )
+//			], $states );
 
 
 			$grid->column( 'order', '排序' )->editable()->sortable();

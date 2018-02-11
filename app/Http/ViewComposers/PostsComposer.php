@@ -20,8 +20,9 @@ class PostsComposer
     {
         $posts = Category::with(['posts' => function ($query) use ($limit) {
             return $query->limit($limit)
-                ->latest('index_recommend')
+//                ->latest('index_recommend')
                 ->oldest('order')
+	            ->latest('created_at')
                 ->get();
         }])->find($category);
 
