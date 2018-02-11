@@ -1,7 +1,7 @@
 @extends('home.layouts.master')
 @section('page_title', $expert->name)
 @section('banner')
-    <div class="banner-inner" style="background-image: url(images/services.png);">
+    <div class="banner-inner" style="background-image: url({{ config( 'app.url' ) . config('page_default_cover') }});">
         {{--<div class="txt">--}}
         {{--<p class="p1">专家团队</p>--}}
         {{--<p class="p2">expert team</p>--}}
