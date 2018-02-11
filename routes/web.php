@@ -17,5 +17,4 @@ Route::group( [
 	$router->get( 'pages-{page}', 'PagesController@show' )->name( 'pages.show' ); // 单页面管理
 	$router->get( 'concat-{city?}', 'PagesController@concat' )->name( 'pages.concat' );
 
-
 } );
