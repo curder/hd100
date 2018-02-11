@@ -47,4 +47,37 @@ class Category extends Model {
 
 		return $src;
 	}
+
+	protected static function boot() {
+//        parent::boot();
+
+		static::saving( function ( Model $model ) {
+			$parentColumn = $model->getParentColumn();
+
+			if ( request()->has( $parentColumn ) && request()->input( $parentColumn ) == $model->getKey() ) {
+				throw new \Exception( trans( 'admin.parent_select_error' ) );
+			}
+
+			if ( request()->has( '_order' ) ) {
+				$order = request()->input( '_order' );
+				request()->offsetUnset( '_order' );
+
+				static::tree()->saveOrder( $order );
+
+				return false;
+			}
+
+			// 生成标签名称
+			if ( ! $model->uri && $model->title ) {
+				$uri = app( 'translug' )->translug( $model->title );
+				if ( $count = self::where( 'uri', $uri )->count() ) {
+					if ( $count ) {
+						$uri = "$uri-$count";
+					}
+				}
+				$model->uri = $uri;
+				$model->save();
+			}
+		} );
+	}
 }

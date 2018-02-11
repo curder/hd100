@@ -98,7 +98,7 @@ class CategoriesController extends Controller {
 			$form->display( 'id', 'ID' );
 			$form->select( 'parent_id', '上级文字链' )->options( Category::selectOptions() );
 			$form->text( 'title', '分类名称' )->rules( 'required' );
-			$form->text( 'uri', '分类别名' )->rules( 'required' );
+			$form->text( 'uri', '分类别名' )->help('请使用唯一的英文标识，不填写默认从有道词典翻译');
 			$form->image( 'cover', '封面' )
 			     ->move( 'images/categories/' . date( 'Y-m-d' ) )
 			     ->uniqueName()
@@ -116,13 +116,16 @@ class CategoriesController extends Controller {
 			$tree->disableCreate();
 
 			$tree->branch( function ( $branch ) {
-				$payload = "<strong>{$branch['title']}</strong>";
 
-				if ( ! isset( $branch['children'] ) ) {
-					$payload .= "&nbsp;&nbsp;&nbsp;";
-				}
 
-				return $payload;
+				$preview = sprintf(
+					'<a href="%s" target="_blank" class="text-success pull-right dd-nodrag" title="预览页面">&nbsp;&nbsp;<i class="fa fa-file-o"></i></a>',
+					route( 'home.posts.index', $branch['uri'] )
+				);
+
+				return "<strong>{$branch['title']}</strong> {$preview}";
+
+//				return $payload;
 			} );
 		} );
 	}
