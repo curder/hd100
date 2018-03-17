@@ -1262,11 +1262,16 @@
 }
 
 @media only screen and (max-width: 1023px) {
+  // 只保留中间的行业咨询
+  .section-index-2 .news-list:first-child, .section-index-2 .news-list:last-child {
+    display: none;
+  }
   .section-index-2 .news-list {
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
   }
+
 }
 
 // 成功案例
@@ -1489,6 +1494,11 @@
 }
 
 @media only screen and (max-width: 1023px) {
+  // 我们的服务版块
+  .serviceList ul li:first-child, .serviceList ul li:nth-child(2), .serviceList ul li:nth-child(3) {
+    display: none;
+  }
+
   .serviceList ul li {
     width: 100%;
   }
@@ -1556,13 +1566,13 @@
 }
 
 .picMarquee-left .hd .next {
-  background: url(/images/next.png) no-repeat;
+  background: url(../images/next.png) no-repeat;
   top: 15px;
   left: 27px;
 }
 
 .picMarquee-left .hd .prev {
-  background: url(/images/prev.png) no-repeat;
+  background: url(../images/prev.png) no-repeat;
   top: 15px;
   right: 10px;
 }
@@ -1799,6 +1809,7 @@
 }
 
 .footer .footerMenu {
+  display: none;
   background-color: #1e1e1e;
   //height: 50px;
   line-height: 50px;
@@ -1846,3 +1857,584 @@
     text-align: center;
   }
 }
+
+@media only screen and (max-width: 1199px) {
+  /*******************************
+      -------[=公用]-------
+  ********************************/
+  .wp {
+    width: 98%;
+  }
+  #nav {
+    margin-right: 0;
+  }
+  #hd .tel {
+    display: none;
+  }
+  #nav li {
+    padding-left: 10px;
+  }
+  #nav .par {
+    padding: 0 20px;
+  }
+  #fd .fd-c .fd-menu {
+    margin-left: -40px;
+    width: 701px;
+  }
+  #fd .fd-c .fd-menu li {
+    padding-left: 40px;
+  }
+
+  #banner .item {
+    height: 400px;
+  }
+  .section-index-1 .list .tit {
+    height: 45px;
+    line-height: 44px;
+    font-size: 16px;
+  }
+  .section-index-1 .list .info {
+    font-size: 14px;
+  }
+  .section-index-2 .list .date {
+    font-size: 14px;
+  }
+  .section-index-2 .list .date em {
+    font-size: 16px;
+  }
+  .section-index-2 .list .tit {
+    margin-top: 12px;
+    font-size: 16px;
+  }
+  .section-index-2 .list .info {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  .section-index-3 .Advantage {
+    background: none;
+  }
+  .section-index-3 .Advantage ul {
+    width: 30%;
+  }
+  .type-list {
+    margin: 30px 0;
+  }
+
+  .box-case-inner .item .info {
+    margin-top: 10px;
+  }
+
+}
+
+@media only screen and (max-width: 1023px) {
+  body {
+    padding-top: 60px;
+  }
+  #nav {
+    display: none;
+  }
+  .menuBtn {
+    display: block;
+  }
+  #hd {
+    height: 60px;
+  }
+  #hd .logo {
+    margin: 12px 0 12px 18px;
+  }
+  .section-index-3 .Advantage ul {
+    width: 31%;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  /*******************************
+      -------[=公用]-------
+  ********************************/
+  #fd .fd-t {
+    display: none;
+  }
+  #fd .fd-c {
+    display: none;
+  }
+
+  #banner .item {
+    height: 300px;
+  }
+  #banner .item .txt {
+    top: 20%;
+  }
+  #banner .item .p1 {
+    font-size: 26px;
+  }
+  #banner .item .p2 {
+    font-size: 14px;
+  }
+  #banner .item .more {
+    margin: 10px auto 0;
+  }
+  .Failure {
+    background: none;
+  }
+  .Failure ul {
+    width: 35%;
+  }
+  .Failure ol {
+    width: 35%;
+  }
+  .g-tit-1 {
+    padding: 40px 0 20px;
+  }
+  .g-tit-1 .p1 {
+    font-size: 20px;
+  }
+  .g-tit-2 .p1 span {
+    width: 90px;
+  }
+  .g-tit-2 .p1 span img {
+    top: -30px;
+  }
+  .g-tit-1 .p2 {
+    font-size: 14px;
+  }
+  .section-index-3 .Advantage ul {
+    width: 35%;
+  }
+  .box-culture .list li {
+    margin-bottom: 20px;
+    padding: 0 20px 20px 80px;
+    background-position: 16px 30px;
+  }
+  .box-culture .list .tit {
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .box-culture .list .info {
+    font-size: 14px;
+  }
+  .box-case-inner .item {
+    width: 50%;
+  }
+  .box-case-inner {
+    padding: 30px 0 20px;
+  }
+  .box-case-info {
+    margin: 30px 0;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  .section-index-0 .box-pic {
+    width: 100%;
+  }
+  .section-index-0 .box-pic img {
+    width: 100%;
+  }
+  .section-index-0 .box-txt {
+    position: static;
+    margin-top: 20px;
+    width: 100%;
+  }
+  .section-index-0 .box-txt .tit {
+    font-size: 18px;
+  }
+  .section-index-0 .box-txt .info {
+    margin: 20px 0 30px;
+    font-size: 14px;
+  }
+  .g-tit-1 .p1 {
+    font-size: 18px;
+  }
+  .g-tit-1 .p2 {
+    padding-top: 8px;
+  }
+  .section-index-1 .list .info {
+    height: 52px;
+  }
+  .section-index-1 .list {
+    margin-left: -20px;
+  }
+  .section-index-1 .list li {
+    padding-left: 20px;
+  }
+  .section-index-2 .list {
+    margin-left: -20px;
+    margin-bottom: 0;
+  }
+  .section-index-2 .list li {
+    padding-left: 20px;
+  }
+  .more-index {
+    margin: 0 auto;
+  }
+  .section-index-3 .Advantage ul {
+    width: 45%;
+  }
+  .section-index-3 .Advantage ul li dl dd {
+    font-size: 16px;
+  }
+  .box-service .list .tit {
+    height: 33px;
+    line-height: 32px;
+    font-size: 16px;
+  }
+  .box-service .list {
+    margin-left: -20px;
+  }
+  .box-service .list li {
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+  .cont-inner {
+    padding-bottom: 20px;
+  }
+
+  .box-service-info .img {
+    float: none;
+    width: 100%;
+  }
+  .box-service-info .txt {
+    margin-right: 0;
+    padding-top: 20px;
+  }
+  .box-service-info .tit {
+    font-size: 16px;
+  }
+  .box-service-info p {
+    padding: 10px 0 15px;
+    font-size: 14px;
+  }
+
+  .box-about .txt {
+    padding-bottom: 20px;
+  }
+  .box-about .txt .l, .box-about .txt .r {
+    float: none;
+    width: 100%;
+    line-height: 1.7;
+  }
+  .box-about .txt p {
+    padding-bottom: 10px;
+  }
+  .box-about .list .tit {
+    margin-top: 10px;
+  }
+
+  .box-contact #allmap {
+    margin: 0 !important;
+    float: none !important;
+    width: 100% !important;
+  }
+  .box-contact .txt {
+    margin-top: 20px !important;
+    float: none !important;
+    width: 100% !important;
+  }
+  .box-contact .txt .tit {
+    font-size: 18px;
+  }
+  .box-contact .txt .info {
+    padding-top: 0;
+    font-size: 14px;
+  }
+  .box-contact {
+    padding: 20px 0;
+  }
+
+  .type-list {
+    margin: 20px 0;
+  }
+  .box-news .list {
+    margin-left: -20px;
+  }
+  .box-news .list li {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    width: 50%;
+  }
+  .box-news .list .tit {
+    height: 43px;
+    line-height: 42px;
+    font-size: 16px;
+  }
+  .box-news .list .date {
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .pages {
+    margin: 20px 0;
+  }
+
+  .box-news-info {
+    padding-top: 20px;
+  }
+  .box-news-info .tit {
+    font-size: 22px;
+  }
+  .box-news-info .info {
+    padding-top: 20px;
+  }
+  .box-news-info .info p {
+    padding-bottom: 16px;
+  }
+  .box-news-info .tips {
+    padding: 20px 0 20px 70px;
+  }
+  .box-news-info .list .tit-news {
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+  }
+  .box-news-info .list .date-2 {
+    font-size: 12px;
+  }
+
+  .box-team .list li {
+    padding-right: 20px;
+  }
+  .box-team .list .img {
+    float: none;
+    width: 100%;
+  }
+  .box-team .list .txt {
+    margin-left: 0;
+  }
+  .box-team .list .tit {
+    font-size: 16px;
+  }
+  .box-team .list .info {
+    margin: 10px 0 7px;
+  }
+
+  .box-team-info {
+    margin: 20px 0 0;
+  }
+  .box-team-info .txt {
+    margin-left: 240px;
+  }
+  .box-team-info .txt .tit {
+    font-size: 18px;
+  }
+  .box-team-info .txt .type {
+    line-height: 36px;
+  }
+  .box-team-info .txt .info {
+    font-size: 14px;
+  }
+  .box-team-info .txt .info p {
+    padding-bottom: 20px;
+  }
+
+  .box-case-info {
+    margin: 10px 0 20px;
+  }
+  .box-case-info .tit {
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+  }
+  .box-case-info .tit2 {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .box-case-info .list li {
+    float: none;
+    width: 100%;
+  }
+  .box-case-info .info p {
+    padding-top: 10px;
+  }
+  .box-case-info {
+    padding: 0 10px;
+  }
+
+  .box-case-inner .item .tit span {
+    font-size: 20px;
+  }
+  .box-case-inner .item .info {
+    font-size: 14px;
+  }
+  .box-case-inner .item .tit-txt {
+    font-size: 16px;
+  }
+  .box-case-inner .item .date2 {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  .sub-col .wp {
+    height: 51px;
+  }
+  .sub-col a {
+    height: 50px;
+    line-height: 50px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #banner .item {
+    height: 260px;
+  }
+  #banner .item .p1 {
+    font-size: 20px;
+  }
+  .section-index-0 .box-txt .btn.slick-prev {
+    right: 60px;
+  }
+  .section-index-0 .box-txt .btn.slick-next {
+    right: 20px;
+  }
+  .section-index-0 .box-txt .info {
+    height: 76px;
+  }
+  .section-index-1 .list li {
+    width: 100%;
+  }
+  .section-index-2 .list li {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .section-index-2 .list .info {
+    margin-top: 10px;
+  }
+  .section-index-0 .Points li {
+    width: 48%;
+    margin: 1%;
+  }
+  .banner-inner {
+    height: 200px;
+  }
+  .banner-inner .txt {
+    top: 23%;
+  }
+  .banner-inner .txt .p1 {
+    font-size: 20px;
+  }
+  .banner-inner .txt .p2 {
+    font-size: 14px;
+  }
+
+  .box-service .list li {
+    width: 50%;
+  }
+  .section-index-3 .Advantage ul {
+    width: 47%;
+  }
+  .section-index-3 .Advantage ul li dl dd {
+    font-size: 16px;
+    padding-top: 2%;
+  }
+  .box-culture .list li {
+    float: none;
+    width: 100%;
+    min-height: auto;
+  }
+  .Failure ul {
+    width: 50%;
+  }
+  .Failure ul li dl dt {
+    margin-right: 10px;
+  }
+  .Failure ul li dl dd a {
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .Failure ol {
+    width: 50%;
+  }
+  .Failure ol li dl dt {
+    margin-left: 10px;
+  }
+  .Failure ol li dl dd a {
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .box-team-info .img {
+    float: none;
+    width: 100%;
+  }
+  .box-team-info img {
+    margin: 0 auto;
+  }
+  .box-team-info .txt {
+    margin-left: 0;
+    padding-top: 20px;
+  }
+  .box-team-info .txt .tit {
+    text-align: center;
+  }
+  .box-team-info .txt .type {
+    text-align: center;
+  }
+  .box-team-info .txt .info p {
+    padding-bottom: 10px;
+  }
+
+  .box-case-inner .item {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .box-case-info .tit {
+    height: 42px;
+    line-height: 42px;
+    font-size: 20px;
+  }
+  .box-case-info .tit2 {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .box-case-info .list {
+    margin-bottom: 20px;
+  }
+  .box-case-info .list li {
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .box-case-info .info {
+    font-size: 14px;
+  }
+
+  .box-news .pages {
+    display: none;
+  }
+  .btn-load-more {
+    margin-top: 20px;
+    display: block;
+  }
+
+}
+
+@media only screen and (max-width: 479px) {
+  .box-service .list li {
+    width: 100%;
+  }
+
+  .box-about .list li {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  .box-news .list li {
+    width: 100%;
+  }
+
+  .box-news-info .list li {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+
+}
+
