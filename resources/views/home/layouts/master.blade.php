@@ -19,6 +19,7 @@
         @yield('banner')
         @yield('content')
         @section('footer')@include('home.layouts.footer')@show
+        @include('home.widgets.baidu_statistics_code')
     </div>
 </body>
 </html>
